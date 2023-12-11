@@ -7,11 +7,24 @@ import { ITarefas } from '../types/ITarefas';
 
 function App() {
   const [tarefas, setTarefas] = useState<ITarefas[] | [] >([]);
+  const [selecionado, setSelecionado] = useState<ITarefas | null>(null);
+
+  function selecionarTarefa(tarefaSelecionada: ITarefas) {
+    setSelecionado(tarefaSelecionada);
+    setTarefas(tarefasAnteriores => tarefasAnteriores.map(tarefa => ({
+      ...tarefa,
+      selecionado: tarefa.id === tarefaSelecionada.id ? true : false
+    })));
+  }
+
   return (
     <div className={style.AppStyle}>
       <Formulario setTarefas= {setTarefas} />
-      <Lista tarefas={tarefas} />
-      <Cronometro />
+      <Lista 
+        tarefas={tarefas}
+        selecionarTarefa={selecionarTarefa}
+      />
+      <Cronometro selecionado={selecionado} />
     </div>
   );
 }
