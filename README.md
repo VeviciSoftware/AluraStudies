@@ -1,4 +1,4 @@
-# Information about the aplication
+# Application Information
 
 AluraStudies is a visually appealing and user-friendly React application designed to help you effectively manage your studies. It empowers you to create, track, and organize tasks associated with your academic pursuits. Built with React and TypeScript, this project adheres to clean coding principles like DRY (Don't Repeat Yourself) and SRP (Single Responsibility Principle) for maintainability and scalability.
 
